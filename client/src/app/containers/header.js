@@ -7,6 +7,8 @@ import {connect} from 'react-redux';
 import Store from '../store/store';  
 import Auth from '../modules/auth/authResource';
 
+import './header.css'
+
 class Header extends Component {
   constructor(props){
     super(props)

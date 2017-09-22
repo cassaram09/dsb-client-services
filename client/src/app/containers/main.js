@@ -6,6 +6,8 @@ import Login from './login';
 import Home from './home';
 import SignUp from './signup';
 
+import './main.css';
+
 function Main(props) {
 
   return (
