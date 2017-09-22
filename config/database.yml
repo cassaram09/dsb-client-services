@@ -81,5 +81,5 @@ test:
 production:
   <<: *default
   database: dsb-client-services_production
-  username: dsb-client-services
+  username: dsb_client_services
   password: <%= ENV['DSB-CLIENT-SERVICES_DATABASE_PASSWORD'] %>
