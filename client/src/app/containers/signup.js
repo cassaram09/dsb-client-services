@@ -1,17 +1,18 @@
-import React, {Component} from 'react';
+import React, {Component, PropTypes} from 'react';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 
 import Auth from '../modules/auth/authResource';
 
-class Login extends Component {
+class SignUp extends Component {
   constructor(){
     super()
 
     this.state={
       user: {
         email: '',
-        password: ''
+        password: '',
+        password_confirmation: ''
       }
     }
 
@@ -24,9 +25,9 @@ class Login extends Component {
     }
 
     // dispatches the API call action
-    this.onSave = (event) => {
+    this.signUp = (event) => {
       event.preventDefault();
-      this.props.actions.dispatchAction('login', this.state);
+      this.props.actions.dispatchAction('signup', this.state);
     }
   }
 
@@ -34,10 +35,11 @@ class Login extends Component {
   render(){
     return(
       <div>
-        <form>
+        <form onSubmit={this.signUp}>
           <input type='email' name="email" value={this.state.user.email} onChange={this.onChange}/>
           <input type='password' name="password" value={this.state.user.password} onChange={this.onChange}/>
-          <input type="submit" className="btn btn-primary" onClick={this.onSave}/>
+          <input type='password' name="password_confirmation" value={this.state.user.password_confirmation} onChange={this.onChange}/>
+          <input type="submit" className="btn btn-primary" onClick={this.signUp}/>
         </form>
       </div>
     )
@@ -51,4 +53,4 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-export default connect(null, mapDispatchToProps)(Login);
+export default connect(null, mapDispatchToProps)(SignUp);

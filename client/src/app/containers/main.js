@@ -4,7 +4,7 @@ import {Switch, Route} from 'react-router-dom'
 
 import Login from './login';
 import Home from './home';
-import history from '../history';
+import SignUp from './signup';
 
 function Main(props) {
 
@@ -13,6 +13,7 @@ function Main(props) {
       <Switch>
         <Route exact path='/' component={Home} />
         <Route exact path='/login' component={Login} />
+        <Route exact path='/signup' component={SignUp} />
       </Switch>
     </main>
   )

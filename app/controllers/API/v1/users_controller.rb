@@ -1,4 +1,4 @@
-class API::v1::UsersController < ApplicationController
+class Api::V1::UsersController < ApplicationController
   
   skip_before_action :authenticate, only: :create
 
@@ -15,8 +15,6 @@ class API::v1::UsersController < ApplicationController
       render json: {error: "Sign up failed."}, status: 500
     end
   end
-
-  def reports
 
   def update
     @user = User.find_by(id: current_user.id)

@@ -1,29 +1,48 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom'
+import {bindActionCreators} from 'redux';
+import {connect} from 'react-redux';
 
 import Store from '../store/store';  
+import Auth from '../modules/auth/authResource';
 
-function Header(props) {
+class Header extends Component {
+  constructor(props){
+    super(props)
 
-  console.log(props.session)
+    this.logOut = (event) => {
+      event.preventDefault();
+      this.props.actions.dispatchAction('logout')
+    }
 
-  const logOut = (event) =>{
-    event.preventDefault();
-    Store.dispatch('logout')
   }
-
-  return(
-    <header className="header">
-      <nav>
-        <p>Session: {props.session ? 'true' : 'false'}</p>
-        <ul>
-          <li><Link to='/'>Home</Link></li>
-          <li><Link to='/login'>Login</Link></li>
-        </ul>
-      </nav>
-    </header>
-  )
+  
+  render() {
+    return(
+      <header className="header">
+        <nav>
+          <p>Session: {this.props.session ? 'true' : 'false'}</p>
+          <ul>
+            {this.props.session &&<li><Link to='/'>Home</Link></li> }
+            {!this.props.session && <li><Link to='/login'>Login</Link></li> }
+            {!this.props.session && <li><Link to='/signup'>Sign Up</Link></li> }
+            {this.props.session && <li><a href='#' onClick={this.logOut}>Logout</a></li>}
+          </ul>
+        </nav>
+      </header>
+    )
+  }
 }
 
-export default Header;
+
+const mapStateToProps = (state, ownProps) => { 
+  return {session: state.session};
+};
+const mapDispatchToProps = dispatch => {
+  return {
+    actions: bindActionCreators({dispatchAction: Auth.dispatchAction}, dispatch)
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header);
