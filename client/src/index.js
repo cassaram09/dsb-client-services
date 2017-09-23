@@ -8,6 +8,8 @@ import Store from './app/store/store'
 import history from './app/history'
 import App from './app/app';
 
+import 'semantic-ui-css/semantic.min.css';
+
 ReactDOM.render(
   <Provider store={Store}>
     <Router history={history}>

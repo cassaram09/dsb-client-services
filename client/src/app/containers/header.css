@@ -6,14 +6,12 @@
   height: 100vh;
   border-right: 2px solid #333;
   border-bottom: none; }
-
-.header nav ul {
-  list-style: none; }
-
-.header nav ul li a {
-  text-decoration: none;
-  background: blue;
-  color: white;
-  display: block;
-  margin: 5px;
-  cursor: pointer; }
+  .header nav ul {
+    list-style: none; }
+    .header nav ul li a {
+      text-decoration: none;
+      background: blue;
+      color: white;
+      display: block;
+      margin: 5px;
+      cursor: pointer; }
