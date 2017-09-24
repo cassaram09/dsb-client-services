@@ -7,17 +7,14 @@ class Api::V1::AuthController < ApplicationController
       render json: {error: "Email and Password required."}, status: 401
       return 
     end
-
+ 
     @user = User.find_by(email: auth_params[:email])
 
-    if !@user
-      render json: {error: "User or password not correct."}
-      return
-    end
-
-    if @user.authenticate(auth_params[:password])
+    if @user && @user.authenticate(auth_params[:password])
       jwt = Auth.issue({user: @user.id})
       render json: {jwt: jwt}
+    else
+      render json: {error: "User or password not correct."}
     end
 
   end
