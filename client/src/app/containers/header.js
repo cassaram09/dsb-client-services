@@ -24,8 +24,7 @@ class Header extends Component {
       <header className="header">
         <nav>
           <ul>
-            {this.props.session &&<li><Link to='/'>Dashboard</Link></li> }
-            {this.props.session && <li><a href='#' onClick={this.logOut}>Logout</a></li>}
+            {this.props.session && <li><a href='/logout' onClick={this.logOut}>Logout</a></li>}
           </ul>
         </nav>
       </header>
