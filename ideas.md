@@ -8,6 +8,8 @@ Rework User model to be Company model, since client will be logging in via Compa
 
 Log in -> look up company by Name (username), get the teamwork company ID, then query the TeamWork API for data. 
 
+lives at root of client.darksquarebishop.com
+
 # Dashboard
 
 What should clients see?
@@ -25,6 +27,12 @@ Total number of hours logged
 Outstanding bills?
 
 query wave apps API for invoices 
+
+links to staging website, or other files
+
+notifications bar
+
+
 
 # New Request
 
