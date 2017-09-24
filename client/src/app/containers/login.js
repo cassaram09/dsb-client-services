@@ -47,6 +47,9 @@ class Login extends Component {
           <Grid.Column style={{ maxWidth: 450 }}>
             <Form size='large'>
               <Segment stacked>
+                <div className='error'>
+                  {this.props.error}
+                </div>
                 <Form.Input
                   fluid
                   icon='user'
@@ -64,8 +67,7 @@ class Login extends Component {
                   name='password'
                   onChange={this.onChange}
                 />
-
-                <Button onClick={this.onSave} color='teal' fluid size='large'>Login</Button>
+                <Button className='login-button' onClick={this.onSave} fluid size='large'>Login</Button>
               </Segment>
             </Form>
           </Grid.Column>

@@ -1,17 +1,17 @@
 .header {
-  background: grey;
-  color: black;
+  background: #f9fbff;
+  color: #333;
   flex: 0 0 200px;
   padding: 20px;
   height: 100vh;
-  border-right: 2px solid #333;
+  border-right: 1px solid #ddd;
   border-bottom: none; }
   .header nav ul {
-    list-style: none; }
+    list-style: none;
+    text-align: center; }
     .header nav ul li a {
       text-decoration: none;
-      background: blue;
-      color: white;
+      color: #0066cc;
       display: block;
       margin: 5px;
       cursor: pointer; }

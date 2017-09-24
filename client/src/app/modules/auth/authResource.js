@@ -14,7 +14,7 @@ const Auth = new Resource('auth', '', headers)
 Auth.registerNewAction('/login', 'login', 'POST', (state, action) => {
   if ( action.data.error ) {
     console.log(`%c LOGIN UNSUCCESSFUL`, 'color: red')
-    return state
+    return {error: action.data.error}
   }
   sessionStorage.setItem('jwt', action.data.jwt)
   history.push('/')
@@ -25,7 +25,6 @@ Auth.registerNewAction('/login', 'login', 'POST', (state, action) => {
 
 // sign up action
 Auth.registerNewAction('/signup', 'signup', 'POST', (state, action) => {
-  debugger
   sessionStorage.setItem('jwt', action.data.jwt)
   history.push('/');
   API.headers['AUTHORIZATION']= `Bearer ${action.data.jwt}`

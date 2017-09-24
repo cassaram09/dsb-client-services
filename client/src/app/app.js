@@ -13,7 +13,7 @@ import {connect} from 'react-redux';
 class App extends Component {
 
   render() {
-    if ( this.props.session ){
+    if ( this.props.session == true ){
       return (
         <div className='app'>
           <Header session={this.props.session} />
@@ -23,7 +23,7 @@ class App extends Component {
     } else {
       return (
         <div className='app'>
-          <Login />
+          <Login error={this.props.session.error} />
         </div>
       )
     }

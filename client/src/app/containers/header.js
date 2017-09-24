@@ -17,14 +17,12 @@ class Header extends Component {
       event.preventDefault();
       this.props.actions.dispatchAction('logout')
     }
-
   }
   
   render() {
     return(
       <header className="header">
         <nav>
-          <p>Session: {this.props.session ? 'true' : 'false'}</p>
           <ul>
             {this.props.session &&<li><Link to='/'>Dashboard</Link></li> }
             {this.props.session && <li><a href='#' onClick={this.logOut}>Logout</a></li>}
