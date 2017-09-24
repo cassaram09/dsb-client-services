@@ -14,5 +14,7 @@ Rails.application.routes.draw do
   get '/logout' => 'api/v1/auth#destroy'
   post '/signup' => 'api/v1/users#create'
   post '/password-reset' => 'api/v1/users#password'
+
+  post '/mywebhook' => 'api/v1/users#webhook'
   
 end

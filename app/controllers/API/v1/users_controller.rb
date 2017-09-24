@@ -1,6 +1,6 @@
 class Api::V1::UsersController < ApplicationController
   
-  skip_before_action :authenticate, only: :create
+  skip_before_action :authenticate, only: [:create, :webhook]
 
   def index
     @users = User.all
@@ -35,6 +35,10 @@ class Api::V1::UsersController < ApplicationController
       @user.update(user_params)
       render json: {updated: true}
     end
+  end
+
+  def webhook
+    binding.pry
   end
 
   private
