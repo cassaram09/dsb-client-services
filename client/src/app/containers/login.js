@@ -4,6 +4,10 @@ import {connect} from 'react-redux';
 
 import Auth from '../modules/auth/authResource';
 
+import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui-react'
+
+import './login.css'
+
 class Login extends Component {
   constructor(){
     super()
@@ -20,7 +24,8 @@ class Login extends Component {
       const field = event.target.name;
       const user = this.state.user;
       user[field] = event.target.value
-      return this.setState({user: user})
+      this.setState({user: user})
+      console.log(this.state)
     }
 
     // dispatches the API call action
@@ -33,12 +38,38 @@ class Login extends Component {
   // return the form
   render(){
     return(
-      <div>
-        <form>
-          <input type='email' name="email" value={this.state.user.email} onChange={this.onChange}/>
-          <input type='password' name="password" value={this.state.user.password} onChange={this.onChange}/>
-          <input type="submit" className="btn btn-primary" onClick={this.onSave}/>
-        </form>
+      <div className='login-form'>
+        <Grid
+          textAlign='center'
+          style={{ height: '100%' }}
+          verticalAlign='middle'
+        >
+          <Grid.Column style={{ maxWidth: 450 }}>
+            <Form size='large'>
+              <Segment stacked>
+                <Form.Input
+                  fluid
+                  icon='user'
+                  iconPosition='left'
+                  placeholder='E-mail address'
+                  onChange={this.onChange}
+                  name='email'
+                />
+                <Form.Input
+                  fluid
+                  icon='lock'
+                  iconPosition='left'
+                  placeholder='Password'
+                  type='password'
+                  name='password'
+                  onChange={this.onChange}
+                />
+
+                <Button onClick={this.onSave} color='teal' fluid size='large'>Login</Button>
+              </Segment>
+            </Form>
+          </Grid.Column>
+        </Grid>
       </div>
     )
   }
@@ -52,3 +83,6 @@ const mapDispatchToProps = dispatch => {
 }
 
 export default connect(null, mapDispatchToProps)(Login);
+
+
+

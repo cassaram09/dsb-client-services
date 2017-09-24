@@ -4,10 +4,13 @@
   box-sizing: border-box; }
 
 body {
-  background: grey; }
+  background: grey;
+  width: 100%;
+  height: 100vh; }
 
 .app {
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background: grey;
-  display: flex; }
+  display: flex;
+  justify-content: center; }

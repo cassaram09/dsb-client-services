@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
+import Login from './login';
 
 class Home extends Component {
 
@@ -8,7 +9,7 @@ class Home extends Component {
       <div className='home'>
 
         <h1>Dashboard</h1>
-
+        
       </div>
 
     )

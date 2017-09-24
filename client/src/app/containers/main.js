@@ -14,8 +14,6 @@ function Main(props) {
     <main className='main'>
       <Switch>
         <Route exact path='/' component={Home} />
-        <Route exact path='/login' component={Login} />
-        <Route exact path='/signup' component={SignUp} />
       </Switch>
     </main>
   )
