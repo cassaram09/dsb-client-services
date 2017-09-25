@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
 
   # Check if the user is authenticated before every request
   def authenticate
-    # render json: {error: "unauthorized"}, status: 401 unless logged_in?
+    render json: {error: "unauthorized"}, status: 401 unless logged_in?
   end
 
   # check if the current user is logged in
