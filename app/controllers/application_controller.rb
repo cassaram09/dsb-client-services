@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  before_action :authenticate
+  before_action :authenticate, except: :home
 
   def home
     render 'client/index'
