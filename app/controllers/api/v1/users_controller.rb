@@ -1,4 +1,4 @@
-class Car::V1::UsersController < ApplicationController
+class Api::V1::UsersController < ApplicationController
   
   skip_before_action :authenticate, only: [:create, :webhook]
 
@@ -38,7 +38,7 @@ class Car::V1::UsersController < ApplicationController
   end
 
   def webhook
-    binding.pry
+
   end
 
   private

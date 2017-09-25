@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  namespace :car, :defaults => { :format => 'json' } do
+  namespace :api, :defaults => { :format => 'json' } do
     namespace :v1 do
 
       resources :users, except: [:new, :create]
@@ -9,13 +9,13 @@ Rails.application.routes.draw do
     end  
   end
 
-  get '/login' => 'car/v1/auth#new'
-  post '/login' => 'car/v1/auth#create'
-  get '/logout' => 'car/v1/auth#destroy'
-  post '/signup' => 'car/v1/users#create'
-  post '/password-reset' => 'car/v1/users#password'
+  get '/login' => 'api/v1/auth#new'
+  post '/login' => 'api/v1/auth#create'
+  get '/logout' => 'api/v1/auth#destroy'
+  post '/signup' => 'api/v1/users#create'
+  post '/password-reset' => 'api/v1/users#password'
 
-  post '/mywebhook' => 'car/v1/users#webhook'
+  post '/mywebhook' => 'api/v1/users#webhook'
 
   root to: 'application#home'
   
