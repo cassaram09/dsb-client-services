@@ -1,9 +1,13 @@
-class ApplicationController < ActionController::API
-  before_action :authenticate 
+class ApplicationController < ActionController::Base
+  before_action :authenticate
+
+  def home
+    render 'client/index'
+  end
 
   # Check if the user is authenticated before every request
   def authenticate
-    render json: {error: "unauthorized"}, status: 401 unless logged_in?
+    # render json: {error: "unauthorized"}, status: 401 unless logged_in?
   end
 
   # check if the current user is logged in

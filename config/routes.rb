@@ -16,5 +16,7 @@ Rails.application.routes.draw do
   post '/password-reset' => 'api/v1/users#password'
 
   post '/mywebhook' => 'api/v1/users#webhook'
+
+  root to: 'application#home'
   
 end
