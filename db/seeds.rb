@@ -10,5 +10,5 @@
 dsb = Company.create(name: 'DarkSquareBishop')
 aar = Company.create(name: 'AspenAssociatesRealty')
 
-User.create(email: 'matt@darksquarebishop.com', password: 'hello123', admin: true, company: dsb)
-User.create(email: 'client@client.com', password: 'hello123', admin: false, company: aar)
+User.create(email: 'matt@darksquarebishop.com', password: 'hello123', admin: true).companies.push(dsb)
+User.create(email: 'client@client.com', password: 'hello123', admin: false).companies.push(aar)
