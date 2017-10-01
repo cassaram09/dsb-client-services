@@ -2,9 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {Switch, Route} from 'react-router-dom'
 
-import Login from './login';
-import Home from './home';
-import SignUp from './signup';
+import Home from '../home/home';
 
 import './main.css';
 

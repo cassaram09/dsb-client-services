@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom'
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 
-import Store from '../store/store';  
-import Auth from '../modules/auth/authResource';
+import Store from '../../store/store';  
+import Auth from '../../modules/auth/authResource';
 
 import './header.css'
 

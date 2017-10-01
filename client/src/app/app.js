@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Router } from 'react-router-dom';
 
-import Header from './containers/header';
-import Main from './containers/main';
-import Login from './containers/login'
+import Header from './containers/header/header';
+import Main from './containers/main/main';
+import Login from './containers/login/login'
 
 import './app.css';
 

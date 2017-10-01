@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 
-import Auth from '../modules/auth/authResource';
+import Auth from '../../modules/auth/authResource';
 
 import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui-react'
 
