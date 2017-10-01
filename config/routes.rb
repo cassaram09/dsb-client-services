@@ -3,7 +3,11 @@ Rails.application.routes.draw do
   namespace :api, :defaults => { :format => 'json' } do
     namespace :v1 do
 
-      resources :users, except: [:new, :create]
+      resources :users, except: [:new, :create] do 
+        collection do
+           get '/current-user', to: 'users#get_current_user'
+        end
+      end
       resources :companies
       resources  :auth, only: [:new, :create, :destroy]
 

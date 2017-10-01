@@ -22,6 +22,7 @@ class Header extends Component {
   render() {
     return(
       <header className="header">
+        Logged in with ID {this.props.user.id}
         <nav>
           <ul>
             {this.props.session && <li><a href='/logout' onClick={this.logOut}>Logout</a></li>}
