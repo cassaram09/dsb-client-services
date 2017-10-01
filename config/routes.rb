@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
-
+  
   namespace :api, :defaults => { :format => 'json' } do
     namespace :v1 do
 
       resources :users, except: [:new, :create]
+      resources :companies
       resources  :auth, only: [:new, :create, :destroy]
 
     end  
