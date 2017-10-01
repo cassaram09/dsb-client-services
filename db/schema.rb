@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20171001184424) do
     t.string "email"
     t.string "password_digest"
     t.bigint "company_id"
+    t.boolean "admin", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["company_id"], name: "index_users_on_company_id"
