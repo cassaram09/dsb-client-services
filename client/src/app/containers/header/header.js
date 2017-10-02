@@ -17,28 +17,19 @@ class Header extends Component {
       event.preventDefault();
       this.props.actions.dispatchAction('logout')
     }
-
-    this.listCompanies = () => {
-      if (this.props.user.id){
-        return this.props.user.companies.map( company => {
-          return (<p>{company.name}</p>)
-        })
-      }
-    }
   }
   
-  render() {
-
-    var companies = this.listCompanies()
-    
+  render() {    
     return(
       <header className="header">
-        Logged in with ID {this.props.user.id}
+        Logged in as {this.props.user.name}
         <nav>
           <ul>
+            <li><Link to='/'>Dashboard</Link></li>
+            <li><Link to='/companies'>Companies</Link></li>
             {this.props.session && <li><a href='/logout' onClick={this.logOut}>Logout</a></li>}
+            
           </ul>
-          {companies}
         </nav>
       </header>
     )
