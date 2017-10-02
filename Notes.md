@@ -129,3 +129,8 @@
 
 # Phase 3
 
+
+# Authorization / Error handling
+
+We need to account for when a user tries to access a resource that doesn't exist or they don't have permission to view.
+
