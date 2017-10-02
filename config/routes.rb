@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+ 
   namespace :api, :defaults => { :format => 'json' } do
     namespace :v1 do
 
@@ -9,6 +10,7 @@ Rails.application.routes.draw do
         end
       end
       resources :companies
+      resources :tasks
       resources  :auth, only: [:new, :create, :destroy]
 
     end  
