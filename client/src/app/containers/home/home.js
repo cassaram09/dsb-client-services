@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 class Home extends Component {
 
   render(){
+    debugger
     return(
       <div className='home'>
 
