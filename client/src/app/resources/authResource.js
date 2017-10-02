@@ -1,7 +1,7 @@
 import Resource from 'r3-library';
 import {browserRouter} from 'react-router-dom'
-import history from '../../history'
-import {API} from '../../utils/constants';
+import history from '../history'
+import {API} from '../utils/constants';
 
 const state = !!sessionStorage.jwt
 const headers = {'Content-Type': "application/json"}

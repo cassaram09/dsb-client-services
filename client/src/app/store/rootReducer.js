@@ -1,11 +1,14 @@
 import {combineReducers} from 'redux';
 
-import User from '../modules/user/userResource';
-import Auth from '../modules/auth/authResource';
+import $R_User from '../resources/userResource';
+import $R_Auth from '../resources/authResource';
+import $R_Companies from '../resources/companiesResource';
+
 
 const rootReducer = combineReducers({
-  user: User.reducer,
-  session: Auth.reducer
+  user: $R_User.reducer,
+  session: $R_Auth.reducer,
+  companies: $R_Companies.reducer
 })
 
 export default rootReducer;

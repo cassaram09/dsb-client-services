@@ -5,7 +5,7 @@ import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 
 import Store from '../../store/store';  
-import Auth from '../../modules/auth/authResource';
+import $R_Auth from '../../resources/authResource';
 
 import './header.css'
 
@@ -22,7 +22,7 @@ class Header extends Component {
   render() {    
     return(
       <header className="header">
-        Logged in as {this.props.user.name}
+        Logged in as {this.props.user.email}
         <nav>
           <ul>
             <li><Link to='/'>Dashboard</Link></li>
@@ -38,7 +38,7 @@ class Header extends Component {
 
 const mapDispatchToProps = dispatch => {
   return {
-    actions: bindActionCreators({dispatchAction: Auth.dispatchAction}, dispatch)
+    actions: bindActionCreators({dispatchAction: $R_Auth.dispatchAction}, dispatch)
   }
 }
 

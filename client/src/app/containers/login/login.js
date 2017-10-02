@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 
-import Auth from '../../modules/auth/authResource';
+import $R_Auth from '../../resources/authResource';
 
 import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui-react'
 
@@ -25,7 +25,6 @@ class Login extends Component {
       const user = this.state.user;
       user[field] = event.target.value
       this.setState({user: user})
-      console.log(this.state)
     }
 
     // dispatches the API call action
@@ -80,7 +79,7 @@ class Login extends Component {
 
 const mapDispatchToProps = dispatch => {
   return {
-    actions: bindActionCreators({dispatchAction: Auth.dispatchAction}, dispatch)
+    actions: bindActionCreators({dispatchAction: $R_Auth.dispatchAction}, dispatch)
   }
 }
 

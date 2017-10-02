@@ -1,7 +1,7 @@
 import Resource from 'r3-library';
 
-import {API} from '../../utils/constants';
-import Store from '../../store/store';
+import {API} from '../utils/constants';
+import Store from '../store/store';
 
 const User = new Resource('user', API.dev + '/users', API.headers)
   .configureState({})

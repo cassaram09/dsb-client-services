@@ -5,7 +5,7 @@ import Header from './containers/header/header';
 import Main from './containers/main/main';
 import Login from './containers/login/login'
 
-import User from './modules/user/userResource'
+import $R_User from './resources/userResource'
 import Store from './store/store'
 
 import './app.css';
@@ -17,13 +17,13 @@ class App extends Component {
 
   componentWillMount(){
     if (this.props.session) {
-      User.dispatchAction('getCurrentUser')(Store.dispatch)
+      $R_User.dispatchAction('getCurrentUser')(Store.dispatch)
     }
   }
 
   componentDidUpdate(prevProps, prevState){
     if (this.props.session && !this.props.user.id) {
-      User.dispatchAction('getCurrentUser')(Store.dispatch)
+      $R_User.dispatchAction('getCurrentUser')(Store.dispatch)
     }
   }
 
