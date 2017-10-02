@@ -4,6 +4,7 @@ import {API} from '../utils/constants';
 import Store from '../store/store';
 
 const Companies = new Resource('companies', API.dev + '/companies', API.headers)
+  .registerDefaults();
 
 
   console.log(Companies)
