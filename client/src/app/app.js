@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Router } from 'react-router-dom';
+import { Router, withRouter } from 'react-router-dom';
 
 import Header from './containers/header/header';
 import Main from './containers/main/main';
@@ -53,4 +53,4 @@ const mapStateToProps = (state, ownProps) => {
   }
 };
 
-export default connect(mapStateToProps)(App);
+export default withRouter(connect(mapStateToProps)(App));

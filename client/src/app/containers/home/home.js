@@ -3,9 +3,6 @@ import PropTypes from 'prop-types';
 
 class Home extends Component {
 
-  shouldComponentUpdate(){
-    debugger
-  }
   render(){
     return(
       <div className='home'>

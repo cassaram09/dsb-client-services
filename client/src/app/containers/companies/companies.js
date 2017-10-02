@@ -11,7 +11,6 @@ class Companies extends Component {
     return (
       <div className="companies">
         <h1>Companies</h1>
-    
       </div>
     )
   }

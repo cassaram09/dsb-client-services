@@ -9,8 +9,6 @@ import './main.css';
 
 function Main(props) {
 
-  debugger
-
   return (
     <main className='main'>
       <Switch>
