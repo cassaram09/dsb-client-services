@@ -27,6 +27,7 @@ class Header extends Component {
           <ul>
             <li><Link to='/'>Dashboard</Link></li>
             <li><Link to='/companies'>Companies</Link></li>
+            <li><Link to='/tasks'>Tasks</Link></li>
             {this.props.session && <li><a href='/logout' onClick={this.logOut}>Logout</a></li>}
             
           </ul>

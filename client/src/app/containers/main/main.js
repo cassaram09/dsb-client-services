@@ -4,6 +4,8 @@ import {Switch, Route} from 'react-router-dom'
 
 import Home from '../home/home';
 import Companies from '../companies/companies';
+import Tasks from '../tasks/tasks';
+
 
 import './main.css';
 
@@ -14,6 +16,7 @@ function Main(props) {
       <Switch>
         <Route exact path='/' component={Home} />
         <Route exact path='/companies' component={Companies} />
+        <Route exact path='/tasks' component={Tasks} />
       </Switch>
     </main>
   )
