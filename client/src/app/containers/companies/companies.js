@@ -33,10 +33,6 @@ class Companies extends Component {
       <div className="companies">
         <h1>Companies</h1>
         {companies}
-        <Route path={'/companies/:id'} component={Company} />
-        <Route exact path={this.props.match.url} render={() => (
-          <h3>Please select a topic.</h3>
-        )}/>
       </div>
     )
   }
