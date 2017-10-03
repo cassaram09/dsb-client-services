@@ -35,7 +35,6 @@ class Company extends Component {
         <div className="company">
           <h1>{this.company.name}</h1>
 
-          
         </div>
       )
      } else {

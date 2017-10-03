@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import { Switch, Link, Route, withRouter } from 'react-router-dom'
+import { Icon, Label, Menu, Table } from 'semantic-ui-react'
+
 
 import Company from './company'
 
@@ -18,18 +20,42 @@ class Companies extends Component {
   }
 
   render(){
-    var companies = this.props.companies.map( company => {
-      return (
-        <div key={company.id}>
-          <Link to={`/companies/${company.id}`}>{company.name}</Link>
-        </div>
-      )
+    var companies = {
+      rows: []
+    }
+
+    this.props.companies.map( company => {
+      companies.rows.push( 
+        <Table.Row>
+          <Table.Cell><Link to={`/companies/${company.id}`}>{company.name}</Link></Table.Cell>
+          <Table.Cell><a href={company.website}>{company.website}</a></Table.Cell>
+          <Table.Cell>{company.tasks}</Table.Cell>
+        </Table.Row>
+      ) 
     })
 
     return (
       <div className="companies">
         <h1>Companies</h1>
-        {companies}
+
+        <p>Select a company to view more information.</p>
+
+        <Table celled>
+
+          <Table.Header>
+            <Table.Row>
+              <Table.HeaderCell>Company</Table.HeaderCell>
+              <Table.HeaderCell>Website</Table.HeaderCell>
+              <Table.HeaderCell>Tasks</Table.HeaderCell>
+            </Table.Row>
+          </Table.Header>
+
+          <Table.Body>
+            {companies.rows.map( row => row )}
+          </Table.Body>
+
+        </Table>
+
       </div>
     )
   }
