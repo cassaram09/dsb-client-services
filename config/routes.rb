@@ -25,5 +25,6 @@ Rails.application.routes.draw do
   post '/mywebhook' => 'api/v1/users#webhook'
 
   root to: 'application#home'
+  get '*other', to: 'application#home'
   
 end
