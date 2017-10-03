@@ -14,13 +14,10 @@ class Companies extends Component {
   }
 
   componentWillMount(){
-    if (this.props.companies.length == 0) {
-      this.props.actions.dispatchAction('query');
-    }
+    this.props.actions.dispatchAction('query');
   }
 
   render(){
-    console.log(this.props)
     var companies = this.props.companies.map( company => {
       return (
         <div key={company.id}>

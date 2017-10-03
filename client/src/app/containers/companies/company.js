@@ -12,13 +12,7 @@ class Company extends Component {
   }
 
   componentWillMount(){
-    if (this.props.companies.length == 0) {
-      this.props.actions.dispatchAction('query');
-    } else {
-      this.company = this.props.companies.find( company => {
-        return (this.props.match.params.id == company.id)
-      })
-    }
+    this.props.actions.dispatchAction('get', {company: {id: this.props.match.params.id}});
   }
 
   componentWillUpdate(nextProps, nextState){
@@ -26,20 +20,28 @@ class Company extends Component {
       this.company = nextProps.companies.find( company => {
         return (this.props.match.params.id == company.id)
       })
+
+      // if no company is found, then the resource doesn't exist or they're not 
+      // authorized to view it. Redirect to home page. 
+      if (!this.company) {
+        this.props.history.push('/');
+      }
     }
   }
 
   render(){
-    if (this.company){
+    if (this.company && this.company.authorized){
       return (
         <div className="company">
           <h1>{this.company.name}</h1>
+
+          
         </div>
       )
      } else {
       return (
         <div className="company">
-          <h1>Loading...</h1>
+          
         </div>
       )
      }
