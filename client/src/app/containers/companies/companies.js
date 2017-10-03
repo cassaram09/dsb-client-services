@@ -29,7 +29,7 @@ class Companies extends Component {
         <Table.Row>
           <Table.Cell><Link to={`/companies/${company.id}`}>{company.name}</Link></Table.Cell>
           <Table.Cell><a href={company.website}>{company.website}</a></Table.Cell>
-          <Table.Cell>{company.tasks}</Table.Cell>
+          <Table.Cell>{company.tasks.length}</Table.Cell>
         </Table.Row>
       ) 
     })
