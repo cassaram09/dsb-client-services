@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import { Link, Route, withRouter } from 'react-router-dom'
+import { Card } from 'semantic-ui-react'
 
 import $R_Companies from '../../resources/companiesResource'
 
@@ -34,7 +35,23 @@ class Company extends Component {
       return (
         <div className="company">
           <h1>{this.company.name}</h1>
+          <p><a href={this.company.website}>Website</a></p>
 
+          <Card.Group>
+            <Card fluid>
+              <h2>Tasks</h2>
+              <p>some stuff</p>
+            </Card>
+            <Card fluid>
+              <h2>Projects</h2>
+               <p>some stuff</p>
+            </Card>
+            <Card fluid>
+              <h2>Invoices</h2>
+              <p>some stuff</p>
+            </Card>
+            
+          </Card.Group>
         </div>
       )
      } else {
