@@ -1,163 +1,44 @@
 0 info it worked if it ends with ok
-1 verbose cli [ '/usr/local/bin/node',
-1 verbose cli   '/usr/local/bin/npm',
-1 verbose cli   'install',
-1 verbose cli   'r3-library',
-1 verbose cli   '--save',
-1 verbose cli   'superagent',
-1 verbose cli   '--save' ]
+1 verbose cli [ '/usr/local/bin/node', '/usr/local/bin/npm', 'run', 'build' ]
 2 info using npm@3.10.10
 3 info using node@v6.11.0
-4 silly loadCurrentTree Starting
-5 silly install loadCurrentTree
-6 silly install readLocalPackageData
-7 silly fetchPackageMetaData r3-library
-8 silly fetchPackageMetaData superagent
-9 silly fetchNamedPackageData r3-library
-10 silly mapToRegistry name r3-library
-11 silly mapToRegistry using default registry
-12 silly mapToRegistry registry https://registry.npmjs.org/
-13 silly mapToRegistry data Result {
-13 silly mapToRegistry   raw: 'r3-library',
-13 silly mapToRegistry   scope: null,
-13 silly mapToRegistry   escapedName: 'r3-library',
-13 silly mapToRegistry   name: 'r3-library',
-13 silly mapToRegistry   rawSpec: '',
-13 silly mapToRegistry   spec: 'latest',
-13 silly mapToRegistry   type: 'tag' }
-14 silly mapToRegistry uri https://registry.npmjs.org/r3-library
-15 silly fetchNamedPackageData superagent
-16 silly mapToRegistry name superagent
-17 silly mapToRegistry using default registry
-18 silly mapToRegistry registry https://registry.npmjs.org/
-19 silly mapToRegistry data Result {
-19 silly mapToRegistry   raw: 'superagent',
-19 silly mapToRegistry   scope: null,
-19 silly mapToRegistry   escapedName: 'superagent',
-19 silly mapToRegistry   name: 'superagent',
-19 silly mapToRegistry   rawSpec: '',
-19 silly mapToRegistry   spec: 'latest',
-19 silly mapToRegistry   type: 'tag' }
-20 silly mapToRegistry uri https://registry.npmjs.org/superagent
-21 verbose request uri https://registry.npmjs.org/r3-library
-22 verbose request no auth needed
-23 info attempt registry request try #1 at 11:30:55 PM
-24 verbose request using bearer token for auth
-25 verbose request id 2b719b3b2bdb7372
-26 http request GET https://registry.npmjs.org/r3-library
-27 verbose request uri https://registry.npmjs.org/superagent
-28 verbose request no auth needed
-29 info attempt registry request try #1 at 11:30:55 PM
-30 verbose request using bearer token for auth
-31 verbose etag W/"5999c3c7-315f0"
-32 verbose lastModified Sun, 20 Aug 2017 17:15:51 GMT
-33 http request GET https://registry.npmjs.org/superagent
-34 http 200 https://registry.npmjs.org/r3-library
-35 verbose headers { server: 'nginx/1.10.1',
-35 verbose headers   'content-type': 'application/json',
-35 verbose headers   'last-modified': 'Tue, 01 Aug 2017 16:18:57 GMT',
-35 verbose headers   etag: 'W/"5980a9f1-4a02"',
-35 verbose headers   'content-encoding': 'gzip',
-35 verbose headers   'cache-control': 'max-age=300',
-35 verbose headers   'transfer-encoding': 'chunked',
-35 verbose headers   'accept-ranges': 'bytes',
-35 verbose headers   date: 'Fri, 22 Sep 2017 03:30:55 GMT',
-35 verbose headers   via: '1.1 varnish',
-35 verbose headers   connection: 'keep-alive',
-35 verbose headers   'x-served-by': 'cache-ewr18130-EWR',
-35 verbose headers   'x-cache': 'MISS',
-35 verbose headers   'x-cache-hits': '0',
-35 verbose headers   'x-timer': 'S1506051055.162985,VS0,VE89',
-35 verbose headers   vary: 'Accept-Encoding, Accept' }
-36 silly get cb [ 200,
-36 silly get   { server: 'nginx/1.10.1',
-36 silly get     'content-type': 'application/json',
-36 silly get     'last-modified': 'Tue, 01 Aug 2017 16:18:57 GMT',
-36 silly get     etag: 'W/"5980a9f1-4a02"',
-36 silly get     'content-encoding': 'gzip',
-36 silly get     'cache-control': 'max-age=300',
-36 silly get     'transfer-encoding': 'chunked',
-36 silly get     'accept-ranges': 'bytes',
-36 silly get     date: 'Fri, 22 Sep 2017 03:30:55 GMT',
-36 silly get     via: '1.1 varnish',
-36 silly get     connection: 'keep-alive',
-36 silly get     'x-served-by': 'cache-ewr18130-EWR',
-36 silly get     'x-cache': 'MISS',
-36 silly get     'x-cache-hits': '0',
-36 silly get     'x-timer': 'S1506051055.162985,VS0,VE89',
-36 silly get     vary: 'Accept-Encoding, Accept' } ]
-37 verbose get saving r3-library to /Users/mattcassara/.npm/registry.npmjs.org/r3-library/.cache.json
-38 verbose correctMkdir /Users/mattcassara/.npm correctMkdir not in flight; initializing
-39 http 200 https://registry.npmjs.org/superagent
-40 verbose headers { server: 'nginx/1.10.1',
-40 verbose headers   'content-type': 'application/json',
-40 verbose headers   'last-modified': 'Wed, 13 Sep 2017 10:08:11 GMT',
-40 verbose headers   etag: 'W/"59b9038b-315fc"',
-40 verbose headers   'content-encoding': 'gzip',
-40 verbose headers   'cache-control': 'max-age=300',
-40 verbose headers   'transfer-encoding': 'chunked',
-40 verbose headers   'accept-ranges': 'bytes',
-40 verbose headers   date: 'Fri, 22 Sep 2017 03:30:55 GMT',
-40 verbose headers   via: '1.1 varnish',
-40 verbose headers   connection: 'keep-alive',
-40 verbose headers   'x-served-by': 'cache-ewr18149-EWR',
-40 verbose headers   'x-cache': 'MISS',
-40 verbose headers   'x-cache-hits': '0',
-40 verbose headers   'x-timer': 'S1506051055.169524,VS0,VE75',
-40 verbose headers   vary: 'Accept-Encoding, Accept' }
-41 silly get cb [ 200,
-41 silly get   { server: 'nginx/1.10.1',
-41 silly get     'content-type': 'application/json',
-41 silly get     'last-modified': 'Wed, 13 Sep 2017 10:08:11 GMT',
-41 silly get     etag: 'W/"59b9038b-315fc"',
-41 silly get     'content-encoding': 'gzip',
-41 silly get     'cache-control': 'max-age=300',
-41 silly get     'transfer-encoding': 'chunked',
-41 silly get     'accept-ranges': 'bytes',
-41 silly get     date: 'Fri, 22 Sep 2017 03:30:55 GMT',
-41 silly get     via: '1.1 varnish',
-41 silly get     connection: 'keep-alive',
-41 silly get     'x-served-by': 'cache-ewr18149-EWR',
-41 silly get     'x-cache': 'MISS',
-41 silly get     'x-cache-hits': '0',
-41 silly get     'x-timer': 'S1506051055.169524,VS0,VE75',
-41 silly get     vary: 'Accept-Encoding, Accept' } ]
-42 verbose get saving superagent to /Users/mattcassara/.npm/registry.npmjs.org/superagent/.cache.json
-43 verbose correctMkdir /Users/mattcassara/.npm correctMkdir not in flight; initializing
-44 silly install normalizeTree
-45 silly loadCurrentTree Finishing
-46 silly loadIdealTree Starting
-47 silly install loadIdealTree
-48 silly cloneCurrentTree Starting
-49 silly install cloneCurrentTreeToIdealTree
-50 silly cloneCurrentTree Finishing
-51 silly loadShrinkwrap Starting
-52 silly install loadShrinkwrap
-53 silly loadShrinkwrap Finishing
-54 silly loadAllDepsIntoIdealTree Starting
-55 silly install loadAllDepsIntoIdealTree
-56 silly rollbackFailedOptional Starting
-57 silly rollbackFailedOptional Finishing
-58 silly runTopLevelLifecycles Finishing
-59 silly install printInstalled
-60 verbose stack Error: Refusing to install r3-library as a dependency of itself
-60 verbose stack     at checkSelf (/usr/local/lib/node_modules/npm/lib/install/validate-args.js:53:14)
-60 verbose stack     at Array.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/slide/lib/bind-actor.js:15:8)
-60 verbose stack     at LOOP (/usr/local/lib/node_modules/npm/node_modules/slide/lib/chain.js:15:14)
-60 verbose stack     at chain (/usr/local/lib/node_modules/npm/node_modules/slide/lib/chain.js:20:5)
-60 verbose stack     at /usr/local/lib/node_modules/npm/lib/install/validate-args.js:16:5
-60 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/slide/lib/async-map.js:52:35
-60 verbose stack     at Array.forEach (native)
-60 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/slide/lib/async-map.js:52:11
-60 verbose stack     at Array.forEach (native)
-60 verbose stack     at asyncMap (/usr/local/lib/node_modules/npm/node_modules/slide/lib/async-map.js:51:8)
-61 verbose cwd /Users/mattcassara/Development/Personal/dsb-client-services
-62 error Darwin 16.7.0
-63 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "install" "r3-library" "--save" "superagent" "--save"
-64 error node v6.11.0
-65 error npm  v3.10.10
-66 error code ENOSELF
-67 error Refusing to install r3-library as a dependency of itself
-68 error If you need help, you may report this error at:
-68 error     <https://github.com/npm/npm/issues>
-69 verbose exit [ 1, true ]
+4 verbose run-script [ 'prebuild', 'build', 'postbuild' ]
+5 info lifecycle r3-library@1.0.0~prebuild: r3-library@1.0.0
+6 silly lifecycle r3-library@1.0.0~prebuild: no script for prebuild, continuing
+7 info lifecycle r3-library@1.0.0~build: r3-library@1.0.0
+8 verbose lifecycle r3-library@1.0.0~build: unsafe-perm in lifecycle true
+9 verbose lifecycle r3-library@1.0.0~build: PATH: /usr/local/lib/node_modules/npm/bin/node-gyp-bin:/Users/mattcassara/Development/Personal/node_modules/.bin:/Library/Frameworks/Python.framework/Versions/3.6/bin:/Users/mattcassara/.rvm/gems/ruby-2.2.6/bin:/Users/mattcassara/.rvm/gems/ruby-2.2.6@global/bin:/Users/mattcassara/.rvm/rubies/ruby-2.2.6/bin:/Applications/Postgres.app/Contents/Versions/9.4/bin:/usr/local:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/mattcassara/.rvm/bin:/Users/mattcassara/Library/Android/sdk/tools:/Users/mattcassara/Library/Android/sdk/platform-tools
+10 verbose lifecycle r3-library@1.0.0~build: CWD: /Users/mattcassara/Development/Personal
+11 silly lifecycle r3-library@1.0.0~build: Args: [ '-c', 'babel-node tools/run build' ]
+12 info lifecycle r3-library@1.0.0~build: Failed to exec build script
+13 verbose stack Error: r3-library@1.0.0 build: `babel-node tools/run build`
+13 verbose stack spawn ENOENT
+13 verbose stack     at ChildProcess.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/spawn.js:33:16)
+13 verbose stack     at emitTwo (events.js:106:13)
+13 verbose stack     at ChildProcess.emit (events.js:191:7)
+13 verbose stack     at maybeClose (internal/child_process.js:891:16)
+13 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:226:5)
+14 verbose pkgid r3-library@1.0.0
+15 verbose cwd /Users/mattcassara/Development/Personal/dsb-client-services
+16 error Darwin 16.7.0
+17 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "run" "build"
+18 error node v6.11.0
+19 error npm  v3.10.10
+20 error file sh
+21 error code ELIFECYCLE
+22 error errno ENOENT
+23 error syscall spawn
+24 error r3-library@1.0.0 build: `babel-node tools/run build`
+24 error spawn ENOENT
+25 error Failed at the r3-library@1.0.0 build script 'babel-node tools/run build'.
+25 error Make sure you have the latest version of node.js and npm installed.
+25 error If you do, this is most likely a problem with the r3-library package,
+25 error not with npm itself.
+25 error Tell the author that this fails on your system:
+25 error     babel-node tools/run build
+25 error You can get information on how to open an issue for this project with:
+25 error     npm bugs r3-library
+25 error Or if that isn't available, you can get their info via:
+25 error     npm owner ls r3-library
+25 error There is likely additional logging output above.
+26 verbose exit [ 1, true ]
