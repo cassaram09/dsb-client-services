@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom'
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 
-import Store from '../store/store';  
-import Auth from '../modules/auth/authResource';
+import Store from '../../store/store';  
+import $R_Auth from '../../resources/authResource';
 
 import './header.css'
 
@@ -19,12 +19,17 @@ class Header extends Component {
     }
   }
   
-  render() {
+  render() {    
     return(
       <header className="header">
+        Logged in as {this.props.user.email}
         <nav>
           <ul>
+            <li><Link to='/'>Dashboard</Link></li>
+            <li><Link to='/companies'>Companies</Link></li>
+            <li><Link to='/tasks'>Tasks</Link></li>
             {this.props.session && <li><a href='/logout' onClick={this.logOut}>Logout</a></li>}
+            
           </ul>
         </nav>
       </header>
@@ -34,7 +39,7 @@ class Header extends Component {
 
 const mapDispatchToProps = dispatch => {
   return {
-    actions: bindActionCreators({dispatchAction: Auth.dispatchAction}, dispatch)
+    actions: bindActionCreators({dispatchAction: $R_Auth.dispatchAction}, dispatch)
   }
 }
 

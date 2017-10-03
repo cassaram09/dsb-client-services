@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
-import { Router } from 'react-router-dom';
+import { Router, withRouter } from 'react-router-dom';
 
-import Header from './containers/header';
-import Main from './containers/main';
-import Login from './containers/login'
+import Header from './containers/header/header';
+import Main from './containers/main/main';
+import Login from './containers/login/login'
+
+import $R_User from './resources/userResource'
+import Store from './store/store'
 
 import './app.css';
 
@@ -12,12 +15,25 @@ import {connect} from 'react-redux';
 
 class App extends Component {
 
+  componentWillMount(){
+    if (this.props.session) {
+      $R_User.dispatchAction('getCurrentUser')(Store.dispatch)
+    }
+  }
+
+  componentDidUpdate(prevProps, prevState){
+    if (this.props.session && !this.props.user.id) {
+      $R_User.dispatchAction('getCurrentUser')(Store.dispatch)
+    }
+  }
+
   render() {
+
     if ( this.props.session == true ){
       return (
         <div className='app'>
-          <Header session={this.props.session} />
-          <Main session={this.props.session} />
+          <Header session={this.props.session} user={this.props.user} />
+          <Main session={this.props.session} user={this.props.user} />
         </div>
       )
     } else {
@@ -31,7 +47,10 @@ class App extends Component {
 }
 
 const mapStateToProps = (state, ownProps) => { 
-  return {session: state.session};
+  return {
+    session: state.session,
+    user: state.user
+  }
 };
 
-export default connect(mapStateToProps)(App);
+export default withRouter(connect(mapStateToProps)(App));
